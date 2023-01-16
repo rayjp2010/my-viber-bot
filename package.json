@@ -22,5 +22,8 @@
     "viber-bot": "^1.0.18",
     "winston": "^3.8.2"
   },
-  "homepage": "https://github.com/rayjp2010/my-viber-bot#readme"
+  "homepage": "https://github.com/rayjp2010/my-viber-bot#readme",
+  "devDependencies": {
+    "@vercel/node": "^2.8.11"
+  }
 }

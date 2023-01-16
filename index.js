@@ -41,8 +41,13 @@ const port = process.env.PORT || 8080;
 const webhookUrl = process.env.WEBHOOK_URL;
 
 const app = express()
-app.use('/viber/webhook', bot.middleware())
+// app.use('/viber/webhook', bot.middleware())
+app.get('/', (req, res) => {
+    res.status(200)
+    res.send('ok')
+})
+
 app.listen(port, () => {
-    bot.setWebhook(webhookUrl)
+    // bot.setWebhook(webhookUrl)
     console.log(`this bot is listening on port: ${port}`)
 })

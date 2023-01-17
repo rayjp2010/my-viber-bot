@@ -27,6 +27,6 @@
     "@vercel/node": "^2.8.11"
   },
   "engines": {
-    "node": "18.x"
+    "node": "14.x"
   }
 }

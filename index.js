@@ -47,6 +47,7 @@ app.use(boturl, bot.middleware())
 
 app.post(hookurl, (req, res) => {
     res.status(200)
+    console.log(req)
     res.send('ok')
 })
 

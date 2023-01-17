@@ -45,7 +45,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
 
 app.use(boturl, bot.middleware())
 
-app.get(hookurl, (req, res) => {
+app.post(hookurl, (req, res) => {
     res.status(200)
     res.send('ok')
 })

@@ -25,5 +25,8 @@
   "homepage": "https://github.com/rayjp2010/my-viber-bot#readme",
   "devDependencies": {
     "@vercel/node": "^2.8.11"
+  },
+  "engines": {
+    "node": "18.x"
   }
 }

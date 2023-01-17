@@ -48,6 +48,12 @@ app.get('/', (req, res) => {
     res.end('ok')
 })
 
+
+app.get('/api', (req, res) => {
+    res.status(200)
+    res.end('ok')
+})
+
 app.listen(port, () => {
     bot.setWebhook(webhookUrl)
     console.log(`Listening on ${port}`)

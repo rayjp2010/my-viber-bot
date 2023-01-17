@@ -12,6 +12,10 @@ const avatar = process.env.BOT_AVATAR_URL || ''
 // Viber will push messages sent to this URL. Web server should be internet-facing.
 const webhookUrl = process.env.WEBHOOK_URL || '';
 const port = process.env.PORT || 3000
+console.log(`token: ${process.env.AUTH_TOKEN}`)
+console.log(`name: ${process.env.BOT_NAME}`)
+console.log(`avatar: ${process.env.BOT_AVATAR_URL}`)
+console.log(`hook: ${process.env.WEBHOOK_URL}`)
 
 const logger = createLogger();
 const app = express()
@@ -42,7 +46,7 @@ bot.onTextMessage(/^hi|hello$/i, (message, response) => {
     response.send(new TextMessage(`Hi there ${response.userProfile.name}. I am ${bot.name}`))
 })
 
-app.use('/viber/webhook', bot.middleware())
+// app.use('/viber/webhook', bot.middleware())
 
 app.get('/', (req, res) => {
     console.log('health check')

@@ -41,13 +41,7 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     response.send(message);
 });
 
-app.use(bot.middleware())
-
-app.get('/', (req, res) => {
-    res.status(200)
-    res.end('ok')
-})
-
+app.use('/', bot.middleware())
 
 app.get('/api', (req, res) => {
     res.status(200)

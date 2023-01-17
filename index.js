@@ -12,6 +12,8 @@ const avatar = process.env.BOT_AVATAR_URL || ''
 // Viber will push messages sent to this URL. Web server should be internet-facing.
 const webhookUrl = process.env.WEBHOOK_URL || '';
 const port = process.env.PORT || 8080
+const boturl = '/bot'
+const hookurl = '/hook'
 
 console.log(`name: ${process.env.BOT_NAME}`)
 console.log(`avatar: ${process.env.BOT_AVATAR_URL}`)
@@ -41,15 +43,15 @@ bot.on(BotEvents.MESSAGE_RECEIVED, (message, response) => {
     response.send(message);
 });
 
-app.use('/', bot.middleware())
+app.use(boturl, bot.middleware())
 
-app.get('/api', (req, res) => {
+app.get(hookurl, (req, res) => {
     res.status(200)
-    res.end('ok')
+    res.send('ok')
 })
 
 app.listen(port, () => {
-    bot.setWebhook(webhookUrl)
+    bot.setWebhook(webhookUrl + boturl)
     console.log(`Listening on ${port}`)
 });
 
